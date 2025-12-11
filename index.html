@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Nasty Survivor – Weekly Pick</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  body {
+    background:#f3f0ff;
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    margin:0;
+    padding:20px;
+  }
+  #wrapper {
+    max-width:560px;
+    margin:40px auto;
+  }
+  .card {
+    background:#fff;
+    border-radius:18px;
+    padding:30px 28px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    border:1px solid rgba(108,92,231,0.10);
+  }
+  h2 {
+    margin:0;
+    font-size:28px;
+    font-weight:700;
+    color:#222;
+  }
+  p {
+    color:#666;
+    line-height:1.5;
+  }
+  label {
+    font-weight:600;
+    margin-top:16px;
+    display:block;
+    color:#222;
+  }
+  input, select {
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:15px;
+  }
+  button {
+    width:100%;
+    background:linear-gradient(90deg,#6c5ce7,#8e7dff);
+    padding:14px 20px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 10px 20px rgba(108,92,231,0.3);
+    margin-top:20px;
+  }
+</style>
+</head>
+<body>
+
+<div id="wrapper">
+  <div class="card">
+    <h2>Nasty Survivor</h2>
+    <p>Pick one team to lose this week. Once you use a team, you can't pick them again.</p>
+
+    <form id="survivorForm">
+
+      <label>Player Name</label>
+      <input type="text" id="playerName" required>
+
+      <label>Email (used to track your picks)</label>
+      <input type="email" id="playerEmail" required>
+
+      <label>Week</label>
+      <select id="weekNumber" required>
+        <option value="" disabled selected>Select week</option>
+        <option>Week 1</option><option>Week 2</option><option>Week 3</option><option>Week 4</option>
+        <option>Week 5</option><option>Week 6</option><option>Week 7</option><option>Week 8</option>
+        <option>Week 9</option><option>Week 10</option><option>Week 11</option><option>Week 12</option>
+        <option>Week 13</option><option>Week 14</option><option>Week 15</option><option>Week 16</option>
+        <option>Week 17</option><option>Week 18</option>
+      </select>
+
+      <label>This Week’s Team (to lose)</label>
+      <select id="teamSelect" required disabled>
+        <option value="" disabled selected>Enter your email to load teams…</option>
+      </select>
+
+      <p id="usedTeamsText" style="display:none;margin:10px 0 0;color:#444;">
+        Previously picked teams:
+        <strong id="usedTeamsList"></strong>
+      </p>
+
+      <button type="submit">Submit Pick 🏈</button>
+
+      <p id="statusMessage" style="text-align:center;color:#666;margin-top:14px;">
+        Fill in your info, then choose a team.
+      </p>
+
+    </form>
+  </div>
+</div>
+
+<script src="survivor.js"></script>
+
+</body>
+</html>
